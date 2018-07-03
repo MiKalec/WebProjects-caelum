@@ -18,6 +18,6 @@
   
   <servlet-mapping>
   	<servlet-name>servletOiMundo</servlet-name>
-  	<url-pattern>/oi</url-pattern>
+  	<url-pattern>/oiMundo</url-pattern>
   </servlet-mapping>
 </web-app>
