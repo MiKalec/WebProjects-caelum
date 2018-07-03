@@ -9,6 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet>
   	<servlet-name>servletOiMundo</servlet-name>
   	<servlet-class>
@@ -20,4 +21,17 @@
   	<servlet-name>servletOiMundo</servlet-name>
   	<url-pattern>/oiMundo</url-pattern>
   </servlet-mapping>
+  
+  <error-page>
+  	<exception-type>java.lang.Exception</exception-type>
+  	<location>/erro.html</location>
+  </error-page>
+  
+  <!-- a página de erro não está sendo chamada devido ao código de erro não estar sendo reconhecido -->
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/e404.html</location>
+  </error-page>
+  
 </web-app>

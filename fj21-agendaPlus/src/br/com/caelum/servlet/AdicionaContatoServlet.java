@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +20,17 @@ import br.com.caelum.jdbc.modelo.Contato;
 
 @WebServlet("/adicionaContato")
 public class AdicionaContatoServlet extends HttpServlet {
+	
+	public void init(ServletConfig config) throws ServletException{
+		super.init(config);
+		log("Iniciando AdicionaContato");
+	}
+	
+	public void destroy() {
+		super.destroy();
+		log("Destruindo AdicionaContato");
+	}
+	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();

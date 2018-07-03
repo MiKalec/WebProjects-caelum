@@ -3,6 +3,7 @@ package br.com.caelum.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
 public class OiMundo extends HttpServlet{
+	
+	public void init(ServletConfig config) throws ServletException{
+		super.init(config);
+		log("Iniciando OiMundo");
+	}
+	
+	public void destroy() {
+		super.destroy();
+		log("Destruindo OiMundo");
+	}
+	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
