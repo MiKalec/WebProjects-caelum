@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.caelum.jdbc.dao.ContatoDao;
 import br.com.caelum.jdbc.modelo.Contato;
 
-
 @WebServlet("/adicionaContato")
+@SuppressWarnings("all")
 public class AdicionaContatoServlet extends HttpServlet {
 	
 	public void init(ServletConfig config) throws ServletException{

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/contador")
+@SuppressWarnings("all")
 public class Contador extends HttpServlet {
 	private int contador = 0;
 
