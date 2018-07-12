@@ -11,11 +11,11 @@
 		<c:import url="cabecalho.jsp"/>
 		<h1>Altera Contato</h1>
 		<hr />
-		<form action="alteraContato" var="contato">
+		<form var="contato" action="mvc?logica=AlteraContatoLogic&id=${contato.id}" method="post">
 			Nome: ${contato.nome} <input type="text" name="nome"/><br/>
-			Email:${contato.email}<input type="text" name="email"/><br/>
+			Email: ${contato.email}<input type="text" name="email"/><br/>
 			Endereço: ${contato.endereco}<input type="text" name="endereco"/><br/>
-			Data Nascimento: <fmt:formatDate value = "${contato.dataNascimento.time}" pattern="dd/MM/yyyy"/> <caelum:campoData id="dataNascimento" /><br/>
+			Data Nascimento:<caelum:campoData id="dataNascimento" /><br/>
 		
 		<input type="submit" value="Gravar">
 		</form>	

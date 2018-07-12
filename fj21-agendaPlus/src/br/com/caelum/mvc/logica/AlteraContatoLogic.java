@@ -1,13 +1,46 @@
 package br.com.caelum.mvc.logica;
 
+import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import br.com.caelum.jdbc.dao.ContatoDao;
+import br.com.caelum.jdbc.modelo.Contato;
 
 public class AlteraContatoLogic implements Logica{
 
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		long id = Long.parseLong(req.getParameter("id"));
 		
-		return null;
+		Contato contato = (Contato) new ContatoDao().pesquisar(id);
+		
+		PrintWriter out = res.getWriter();
+		
+		String nome = req.getParameter("nome");
+		String endereco = req.getParameter("endereco");
+		String email = req.getParameter("email");
+		String dataEmTexto = req.getParameter("dataNascimento");
+		Calendar dataNascimento = null;
+		
+		try {
+			Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dataEmTexto); 
+			dataNascimento = Calendar.getInstance();
+			dataNascimento.setTime(date);
+		}catch (ParseException e) {
+			out.println("Erro de conversão de data");
+			return "mvc?logica=ListaContatosLogic";
+		}
+		
+		ContatoDao dao = new ContatoDao();
+		
+		dao.altera(contato, nome, email, endereco, dataNascimento);
+		
+		return "mvc?logica=ListaContatosLogic";
 	}
 
 }

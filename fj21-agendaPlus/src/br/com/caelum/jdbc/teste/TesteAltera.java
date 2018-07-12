@@ -9,8 +9,8 @@ public class TesteAltera {
     public static void main(String[] args){
         ContatoDao dao = new ContatoDao();
         List<Contato> contatos = dao.getLista();
-        for(Contato contato:contatos){
+        /*for(Contato contato:contatos){
             dao.altera(contato);
-        }
+        }*/
     }
 }

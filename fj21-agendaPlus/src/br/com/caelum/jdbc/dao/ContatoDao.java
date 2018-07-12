@@ -60,15 +60,15 @@ public class ContatoDao {
 		}
 	}
 
-	public void altera(Contato contato) {
-		String sql = "update contatos set nome=?, email=?," + "endereco=?, dataNascimento=? where id=?";
+	public void altera(Contato contato, String nome, String email, String endereco, Calendar dataNascimento) {
+		String sql = "update contatos set nome=?, email=?, endereco=?, dataNascimento=? where id=?";
 
 		try {
 			PreparedStatement statement = this.connection.prepareStatement(sql);
-			statement.setString(1, contato.getNome());
-			statement.setString(2, contato.getEmail());
-			statement.setString(3, contato.getEndereco());
-			statement.setDate(4, new Date(contato.getDataNascimento().getTimeInMillis()));
+			statement.setString(1, nome);
+			statement.setString(2, email);
+			statement.setString(3, endereco);
+			statement.setDate(4, new Date(dataNascimento.getTimeInMillis()));
 			statement.setLong(5, contato.getId());
 			statement.execute();
 			statement.close();
@@ -90,25 +90,27 @@ public class ContatoDao {
 
 	}
 
-	public Object pesquisar(Long id) {
-		String sql = "select * from contatos where id=?";
+	public Contato pesquisar(Long id) {
+		//String sql = "select * from contatos where id=?";
 
 		try {
-			PreparedStatement statement = this.connection.prepareStatement(sql);
+			PreparedStatement statement = connection.prepareStatement("select * from contatos where id=?");
 			statement.setLong(1, id);
-			ResultSet resultSet = statement.executeQuery();
-			Contato contato = new Contato();
-			contato.setId(resultSet.getLong("id"));
-			contato.setNome(resultSet.getString("nome"));
-			contato.setEmail(resultSet.getString("email"));
-			contato.setEndereco(resultSet.getString("endereco"));
-
-			Calendar data = Calendar.getInstance();
-			data.setTime(resultSet.getDate("dataNascimento"));
-			contato.setDataNascimento(data);
-			statement.close();
-			return contato;
-
+			ResultSet rs = statement.executeQuery();
+			if(rs.first()) {
+				Contato contato = new Contato();
+				contato.setId(rs.getLong("id"));
+				contato.setNome(rs.getString("nome"));
+				contato.setEmail(rs.getString("email"));
+				contato.setEndereco(rs.getString("endereco"));
+			
+				Calendar data = Calendar.getInstance();
+				data.setTime(rs.getDate("dataNascimento"));
+				contato.setDataNascimento(data);
+				return contato;
+			}
+			
+			return null;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
