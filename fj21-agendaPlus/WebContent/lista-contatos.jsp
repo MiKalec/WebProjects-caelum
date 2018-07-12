@@ -5,7 +5,9 @@
 
 		<c:import url="cabecalho.jsp"/>
 
-		<jsp:useBean id="dao" class="br.com.caelum.jdbc.dao.ContatoDao" />
+		<!-- Não se faz mais necessária
+			 <jsp:useBean id="dao" class="br.com.caelum.jdbc.dao.ContatoDao" />
+		-->
 		
 		<table border="1">
 			<tr>
@@ -15,7 +17,7 @@
 			<td>Endereço:</td>
 			<td>Data de Nascimento:</td>
 			</tr>
-			<c:forEach var="contato" items="${dao.lista}" varStatus="id">
+			<c:forEach var="contato" items="${contatos}" varStatus="id">
 				<tr bgcolor="#${id.count %2==0?'aaee88': 'ffffff'}">
 					<td>${id.count}</td>
 					<td>${contato.nome}</td>
@@ -34,6 +36,9 @@
 					<td>
 						<a href="mvc?logica=RemoveContatoLogic&id=${contato.id }">Remover</a>
 					</td>
+					<!-- <td>
+						<a href="mvc?logica=MostraParaAlteracaoLogic&id=${contato.id }">Alterar</a>
+					</td> -->
 				</tr>
 			</c:forEach>
 		</table>

@@ -6,21 +6,17 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.caelum.jdbc.dao.ContatoDao;
 import br.com.caelum.jdbc.modelo.Contato;
 
-public class RemoveContatoLogic implements Logica{
+public class MostraParaAlteracaoLogic implements Logica{
 
-	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		
 		long id = Long.parseLong(req.getParameter("id"));
 		
-		Contato contato = new Contato();
-		contato.setId(id);
+		Contato contato = (Contato) new ContatoDao().pesquisar(id);
 		
-		System.out.println("Removendo contato...");
+		req.setAttribute("contato", contato);
 		
-		ContatoDao dao = new ContatoDao();
-		dao.remove(contato);
-		
-		return "mvc?logica=ListaContatosLogic";
+		return "altera-contato.jsp";
 	}
 
 }
