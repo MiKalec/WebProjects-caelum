@@ -42,6 +42,9 @@
 				</tr>
 			</c:forEach>
 		</table>
+		<button>
+			<a href="adiciona-contato.jsp"> Adicionar Contatos</a>
+		</button>
 		<c:import url="rodape.jsp"/>
 	</body>
 </html>
