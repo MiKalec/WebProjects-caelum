@@ -8,11 +8,7 @@ import br.com.caelum.jdbc.modelo.Contato;
 public class MostraParaAdicaoLogic implements Logica{
 
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		
-		Contato contato = new Contato();
-		
-		req.setAttribute("contato", contato);
-		
+				
 		return "adiciona-contato.jsp";
 	}
 
