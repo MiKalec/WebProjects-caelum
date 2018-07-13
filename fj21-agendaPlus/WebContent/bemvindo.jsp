@@ -13,6 +13,9 @@
 		<%= desenvolvido %>
 		
 		<br />
+		<button>
+			<a href="mvc?logica=ListaContatosLogic"> Listar Contatos</a>
+		</button>
 		<%-- o System.out.... é executado no console da aplicação, nesse caso do Tomcat --%>
 		<% 
 			System.out.println("Tudo foi executado!");
