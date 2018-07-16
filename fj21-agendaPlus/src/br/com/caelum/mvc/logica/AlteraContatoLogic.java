@@ -1,6 +1,7 @@
 package br.com.caelum.mvc.logica;
 
 import java.io.PrintWriter;
+import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -17,7 +18,11 @@ public class AlteraContatoLogic implements Logica{
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		long id = Long.parseLong(req.getParameter("id"));
 		
-		Contato contato = (Contato) new ContatoDao().pesquisar(id);
+		Connection connection = (Connection) req.getAttribute("connection");
+		
+		ContatoDao dao = new ContatoDao(connection);
+		
+		Contato contato = (Contato) dao.pesquisar(id);
 		
 		PrintWriter out = res.getWriter();
 		
@@ -35,9 +40,7 @@ public class AlteraContatoLogic implements Logica{
 			out.println("Erro de conversão de data");
 			return "mvc?logica=ListaContatosLogic";
 		}
-		
-		ContatoDao dao = new ContatoDao();
-		
+				
 		dao.altera(contato, nome, email, endereco, dataNascimento);
 		
 		return "mvc?logica=ListaContatosLogic";

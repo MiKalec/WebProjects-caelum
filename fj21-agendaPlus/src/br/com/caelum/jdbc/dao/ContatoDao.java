@@ -1,6 +1,5 @@
 package br.com.caelum.jdbc.dao;
 
-import br.com.caelum.jdbc.ConnectionFactory;
 import br.com.caelum.jdbc.modelo.Contato;
 
 import java.sql.*;
@@ -11,8 +10,16 @@ import java.util.List;
 public class ContatoDao {
 	private Connection connection;
 
+	public ContatoDao(Connection connection) {
+		this.connection = connection;
+	}
+	
 	public ContatoDao() {
-		this.connection = new ConnectionFactory().getConnection();
+		
+	}
+	
+	public Connection getConnection() {
+		return this.connection;
 	}
 
 	public void adiciona(Contato contato) {

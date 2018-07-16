@@ -1,5 +1,7 @@
 package br.com.caelum.mvc.logica;
 
+import java.sql.Connection;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,7 +19,9 @@ public class RemoveContatoLogic implements Logica{
 		
 		System.out.println("Removendo contato...");
 		
-		ContatoDao dao = new ContatoDao();
+		Connection connection = (Connection) req.getAttribute("connection");
+		
+		ContatoDao dao = new ContatoDao(connection);
 		dao.remove(contato);
 		
 		return "mvc?logica=ListaContatosLogic";
