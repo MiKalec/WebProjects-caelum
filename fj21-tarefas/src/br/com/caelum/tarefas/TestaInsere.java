@@ -1,10 +1,8 @@
 package br.com.caelum.tarefas;
 
-import br.com.caelum.tarefas.ConnectionFactory;
 import br.com.caelum.tarefas.dao.JdbcTarefaDao;
 import br.com.caelum.tarefas.modelo.Tarefa;
 
-import java.sql.Connection;
 import java.util.Calendar;
 
 public class TestaInsere {
