@@ -21,12 +21,12 @@
 			Data de finalização:
 			<br />
 			
-			<caelum:campoData id="dataFinalizacao" />
-			<%--<input type="text" name="dataFinalizacao"
+			<%--<caelum:campoData id="dataFinalizacao" />--%>
+			<input type="text" name="dataFinalizacao"
 			 value="<fmt:formatDate
 			  value="${tarefa.dataFinalizacao.time}"
 			   pattern="dd/MM/yyyy"/>"
-			/>--%>
+			/>
 			<br />
 			
 			<input type="submit" value="Alterar"/>
