@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 	<head>
+		<link type="text/css" href="resources/css/tarefas.css" rel="stylesheet" />
 		<script type="text/javascript" src="resources/js/jquery.js"></script>
 		<script type="text/javascript">
 			function finalizaAgora(id){
@@ -16,7 +17,7 @@
 	 	-->
 		<a href="novaTarefa">Criar nova Tarefa</a>
 		<br /> <br />
-		<table border="6">
+		<table>
 			<tr>
 				<th>Id</th>
 				<th>Descrição</th>

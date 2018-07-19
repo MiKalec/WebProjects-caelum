@@ -1,6 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix ="caelum" %>
 <html>
+	<head>
+		<link type="text/css" href="resources/css/tarefas.css" rel="stylesheet" />
+	</head>
 	<body>
 		<h3>Alterar tarefa - ${tarefa.id}</h3>
 		<form action="alteraTarefa" method="post">
