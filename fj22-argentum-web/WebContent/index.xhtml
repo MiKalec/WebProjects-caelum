@@ -10,6 +10,9 @@
 	</h:head>
 	<h:body>
 		<h1>Lista de Negociações</h1>
+		
+		<p:chart type="line" model="#{argentumBean.modeloGrafico}"/>
+		
 		<h:form id="listaNegociacao">
 			
 			<p:dataTable var="negociacao" value="#{argentumBean.negociacoes}"

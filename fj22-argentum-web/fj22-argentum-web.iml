@@ -2,7 +2,7 @@
 <module type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
     <libelement value="jar://$MODULE_DIR$/WebContent/WEB-INF/lib/xstream-1.4.8.jar!/" />
-    <libelement value="jar://$MODULE_DIR$/WebContent/WEB-INF/lib/primefaces-3.5.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebContent/WEB-INF/lib/primefaces-5.1.jar!/" />
     <libelement value="jar://$MODULE_DIR$/WebContent/WEB-INF/lib/javax.faces-2.3.0.jar!/" />
     <conelement value="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0" />
     <conelement value="org.eclipse.jst.j2ee.internal.web.container" />
@@ -43,9 +43,9 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="primefaces-3.5.jar">
+      <library name="primefaces-5.1.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/WebContent/WEB-INF/lib/primefaces-3.5.jar!/" />
+          <root url="jar://$MODULE_DIR$/WebContent/WEB-INF/lib/primefaces-5.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
