@@ -10,7 +10,8 @@ import java.util.Date;
 import java.util.List;
 
 public class TesteImutavel {
-    public static void main(String[] args){
+    @SuppressWarnings("deprecation")
+	public static void main(String[] args){
         Calendar hoje = Calendar.getInstance();
 
         Negociacao petrobras = new Negociacao(30, 32, hoje);

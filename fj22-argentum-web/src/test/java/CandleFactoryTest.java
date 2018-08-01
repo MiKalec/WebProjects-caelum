@@ -171,7 +171,8 @@ public class CandleFactoryTest {
 
         CandleFactory factory = new CandleFactory();
 
-        List<Candle> candlesticks = factory.constoiCandles(negociacoes);
+        @SuppressWarnings("unused")
+		List<Candle> candlesticks = factory.constoiCandles(negociacoes);
 
 
     }

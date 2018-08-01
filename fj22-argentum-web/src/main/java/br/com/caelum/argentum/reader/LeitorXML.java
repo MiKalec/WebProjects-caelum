@@ -9,7 +9,8 @@ import java.util.List;
 
 public class LeitorXML {
 
-    public List<Negociacao> carrega(InputStream inputStream){
+    @SuppressWarnings("unchecked")
+	public List<Negociacao> carrega(InputStream inputStream){
         XStream stream = new XStream(new DomDriver());
         stream.alias("negociacao", Negociacao.class);
         return (List<Negociacao>) stream.fromXML(inputStream);

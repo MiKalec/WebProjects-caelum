@@ -3,6 +3,7 @@ package br.com.caelum.argentum.modelo;
 import java.io.Serializable;
 import java.util.Calendar;
 
+@SuppressWarnings("serial")
 public final class Negociacao implements Serializable {
     private final double preco;
     private final int quantidade;

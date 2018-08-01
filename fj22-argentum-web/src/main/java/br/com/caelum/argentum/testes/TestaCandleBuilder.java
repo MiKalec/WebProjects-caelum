@@ -2,7 +2,6 @@ package br.com.caelum.argentum.testes;
 
 import br.com.caelum.argentum.builder.CandleBuilder;
 import br.com.caelum.argentum.modelo.Candle;
-import br.com.caelum.argentum.modelo.Negociacao;
 
 import java.util.Calendar;
 
