@@ -1,7 +1,7 @@
 package br.com.caelum.argentum.testes;
 
-import br.com.caelum.argentum.factory.CandlestickFactory;
-import br.com.caelum.argentum.modelo.Candlestick;
+import br.com.caelum.argentum.factory.CandleFactory;
+import br.com.caelum.argentum.modelo.Candle;
 import br.com.caelum.argentum.modelo.Negociacao;
 
 import java.util.Arrays;
@@ -16,8 +16,8 @@ public class TestaNegociacaoPetrobrasNegativa {
 
         List<Negociacao> negociacoes = Arrays.asList(petrobras);
 
-        CandlestickFactory factory = new CandlestickFactory();
-        Candlestick candlestick = factory.constoiCandleParaData(hoje, negociacoes);
+        CandleFactory factory = new CandleFactory();
+        Candle candlestick = factory.constoiCandleParaData(hoje, negociacoes);
 
         System.out.println(candlestick);
     }

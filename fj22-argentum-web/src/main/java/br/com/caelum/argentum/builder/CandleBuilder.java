@@ -1,6 +1,6 @@
 package br.com.caelum.argentum.builder;
 
-import br.com.caelum.argentum.modelo.Candlestick;
+import br.com.caelum.argentum.modelo.Candle;
 
 import java.util.Calendar;
 
@@ -55,12 +55,12 @@ public class CandleBuilder {
         return this;
     }
 
-    public Candlestick geraCandle(){
+    public Candle geraCandle(){
         if(!aberturaTest || !fechamentoTest || !minimoTest
                 || !maximoTest || !volumeTest || !dataTest){
             throw new IllegalStateException("Todos os dados necessários não foram passados");
         }
 
-        return new Candlestick(abertura, fechamento, minimo, maximo, volume, data);
+        return new Candle(abertura, fechamento, minimo, maximo, volume, data);
     }
 }

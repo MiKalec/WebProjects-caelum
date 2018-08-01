@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public final class Candlestick {
+public final class Candle {
     private final double abertura;  //preço primeira negociação do dia
     private final double fechamento;    //preço última negociação do dia
     private final double minimo;    //preço mínimo da negociação do dia
@@ -12,7 +12,7 @@ public final class Candlestick {
     private final double volume;    //quantidade de dinheiro que passou pelas negociações do dia
     private final Calendar data;    //dia em questão
 
-    public Candlestick(double abertura, double fechamento, double minimo, double maximo, double volume, Calendar data) {
+    public Candle(double abertura, double fechamento, double minimo, double maximo, double volume, Calendar data) {
         if(minimo > maximo){
             throw new IllegalArgumentException("Mínimo maior que o máximo, errado!");
         }
