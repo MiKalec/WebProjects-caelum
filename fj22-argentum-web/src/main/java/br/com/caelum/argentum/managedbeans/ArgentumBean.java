@@ -10,12 +10,16 @@ import org.primefaces.model.chart.ChartModel;
 
 import br.com.caelum.argentum.factory.CandleFactory;
 import br.com.caelum.argentum.grafico.GeradorModeloGrafico;
+import br.com.caelum.argentum.indicadores.IndicadorAbertura;
+import br.com.caelum.argentum.indicadores.IndicadorFechamento;
+import br.com.caelum.argentum.indicadores.MediaMovelPonderada;
+import br.com.caelum.argentum.indicadores.MediaMovelSimples;
 import br.com.caelum.argentum.modelo.Candle;
 import br.com.caelum.argentum.modelo.Negociacao;
 import br.com.caelum.argentum.modelo.SerieTemporal;
 import br.com.caelum.argentum.ws.ClienteWebService;
 
-@SuppressWarnings("serial")
+@SuppressWarnings({ "serial", "unused" })
 @ManagedBean
 @ViewScoped
 public class ArgentumBean implements Serializable{
@@ -32,7 +36,7 @@ public class ArgentumBean implements Serializable{
 		
 		GeradorModeloGrafico geradorGrafico = 
 				new GeradorModeloGrafico(serie, 2, serie.getUltimaPosicao());
-		geradorGrafico.plotaMediaMovelSimples();
+		geradorGrafico.plotaIndicador(new MediaMovelSimples(new IndicadorFechamento()));
 		this.modeloGrafico = geradorGrafico.getModeloGrafico();
 	}
 	
