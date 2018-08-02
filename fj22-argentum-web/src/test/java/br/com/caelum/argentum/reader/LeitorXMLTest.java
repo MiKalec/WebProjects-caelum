@@ -1,5 +1,5 @@
+package br.com.caelum.argentum.reader;
 import br.com.caelum.argentum.modelo.Negociacao;
-import br.com.caelum.argentum.reader.LeitorXML;
 import org.junit.Assert;
 import org.junit.Test;
 

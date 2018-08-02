@@ -1,4 +1,4 @@
-import br.com.caelum.argentum.modelo.Negociacao;
+package br.com.caelum.argentum.modelo;
 import static org.junit.Assert.*;
 
 import org.junit.Assert;

@@ -1,4 +1,4 @@
-import br.com.caelum.argentum.factory.CandleFactory;
+package br.com.caelum.argentum.factory;
 import br.com.caelum.argentum.modelo.Candle;
 import br.com.caelum.argentum.modelo.Negociacao;
 import static org.junit.Assert.*; //import static -> serve para importar os métodos static da classe
