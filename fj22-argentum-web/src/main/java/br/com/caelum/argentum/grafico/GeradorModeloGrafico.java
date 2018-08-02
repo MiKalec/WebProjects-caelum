@@ -5,7 +5,6 @@ import org.primefaces.model.chart.LineChartModel;
 import org.primefaces.model.chart.LineChartSeries;
 
 import br.com.caelum.argentum.indicadores.Indicador;
-import br.com.caelum.argentum.indicadores.MediaMovelPonderada;
 import br.com.caelum.argentum.modelo.SerieTemporal;
 
 public class GeradorModeloGrafico {
@@ -33,19 +32,6 @@ public class GeradorModeloGrafico {
 		this.modeloGrafico.setLegendPosition("w");
 		this.modeloGrafico.setTitle("Indicadores");
 	
-	}
-	
-	public void plotaMediaMovelPonderada() {
-		MediaMovelPonderada indicador = new MediaMovelPonderada();
-		LineChartSeries chartSerie = new LineChartSeries("MMP - Fechamento");
-		
-		for(int i = comeco; i<=fim; i++) {
-			double valor = indicador.calcula(i, serie);
-			chartSerie.set(i, valor);
-		}
-		((LineChartModel) this.modeloGrafico).addSeries(chartSerie);
-		this.modeloGrafico.setLegendPosition("w");
-		this.modeloGrafico.setTitle("Indicadores");
 	}
 	
 	public ChartModel getModeloGrafico() {

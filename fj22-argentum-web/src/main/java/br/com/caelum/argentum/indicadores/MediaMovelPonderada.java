@@ -1,6 +1,5 @@
 package br.com.caelum.argentum.indicadores;
 
-import br.com.caelum.argentum.modelo.Candle;
 import br.com.caelum.argentum.modelo.SerieTemporal;
 
 public class MediaMovelPonderada implements Indicador {
@@ -11,7 +10,7 @@ public class MediaMovelPonderada implements Indicador {
 	}
 	
 	public MediaMovelPonderada(Indicador outroIndicador) {
-		outroIndicador = outroIndicador;
+		this.outroIndicador = outroIndicador;
 	}
 	
 	
@@ -31,7 +30,7 @@ public class MediaMovelPonderada implements Indicador {
 
 	@Override
 	public String toString() {
-		return "MMP de Fechamento";
+		return "Média Móvel Ponderada";
 	}
 
 	/*

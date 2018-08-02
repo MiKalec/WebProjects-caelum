@@ -1,4 +1,4 @@
-package br.com.caelum.argentum.managedbeans;
+package br.com.caelum.argentum.beans;
 
 import javax.faces.bean.ManagedBean;
 
