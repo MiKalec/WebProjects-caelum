@@ -32,6 +32,7 @@ public class ArgentumBean implements Serializable {
 	private ChartModel modeloGrafico;
 	private String nomeMedia;
 	private String nomeIndicadorBase;
+	private String titulo;
 
 	public ArgentumBean() {
 		this.negociacoes = new ClienteWebService().getNegociacoes();
@@ -43,7 +44,7 @@ public class ArgentumBean implements Serializable {
 		List<Candle> candles = new CandleFactory().constoiCandles(negociacoes);
 		SerieTemporal serie = new SerieTemporal(candles);
 
-		GeradorModeloGrafico geradorGrafico = new GeradorModeloGrafico(serie, 2, serie.getUltimaPosicao());
+		GeradorModeloGrafico geradorGrafico = new GeradorModeloGrafico(serie, 2, serie.getUltimaPosicao(), titulo);
 		geradorGrafico.plotaIndicador(new IndicadorFactory(this.nomeMedia, this.nomeIndicadorBase).defineIndicador());
 		this.modeloGrafico = geradorGrafico.getModeloGrafico();
 	}
@@ -70,6 +71,14 @@ public class ArgentumBean implements Serializable {
 
 	public void setNomeIndicadorBase(String nomeIndicadorBase) {
 		this.nomeIndicadorBase = nomeIndicadorBase;
+	}
+	
+	public String getTitulo() {
+		return this.titulo;
+	}
+	
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 }
