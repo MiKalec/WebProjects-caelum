@@ -13,7 +13,7 @@ public class ConnectionFactory {
 			e1.printStackTrace();
 		}
         try{
-            return DriverManager.getConnection("jdbc:mysql://localhost/jdbc", "root", "Mik@k@1234");
+            return DriverManager.getConnection("jdbc:mysql://localhost/jdbc", "root", "senha");
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
